@@ -1,0 +1,53 @@
+---
+const caseStudies = [
+  {
+    client: '[E-COMMERCE BRAND]',
+    category: 'PAID MEDIA',
+    title: 'More efficient growth, built on better signals.',
+    summary: 'Reworked channel strategy and measurement to help a growing brand invest with more confidence.',
+    metric: '[+XX%]',
+    result: 'improvement in [key metric] over [time period]',
+    variant: 'one',
+  },
+  {
+    client: '[B2B / SAAS CLIENT]',
+    category: 'SEO & CONTENT',
+    title: 'Turning expertise into a reliable source of demand.',
+    summary: 'Connected search intent, useful content and conversion paths around the questions buyers ask.',
+    metric: '[+XX%]',
+    result: 'growth in qualified organic leads',
+    variant: 'two',
+  },
+  {
+    client: '[GROWING BUSINESS]',
+    category: 'ANALYTICS',
+    title: 'Giving the team one trusted view of performance.',
+    summary: 'Aligned reporting with business goals, so the next decision was easier to make and explain.',
+    metric: '[X hrs]',
+    result: 'saved each month on manual reporting',
+    variant: 'three',
+  },
+];
+---
+<section class="section wrap" id="work">
+  <div class="section-heading">
+    <div><p class="eyebrow">A FEW GOOD OUTCOMES</p><h2>Selected <em>work.</em></h2></div>
+    <p class="section-note">A small selection of challenges, decisions and results. Client names and figures are placeholders—swap in approved examples.</p>
+  </div>
+  <div class="case-grid">
+    {caseStudies.map((study, index) => (
+      <article class:list={['case-card', index === 0 && 'case-featured']}>
+        <div class:list={['case-visual', `visual-${study.variant}`]}>
+          <span class="visual-kicker">CASE STUDY 0{index + 1} · {study.category}</span>
+          {study.variant === 'one' && <><div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="visual-stamp">BETTER<br />RETURNS<br />↗</span></>}
+          {study.variant === 'two' && <div class="search-sheet"><span>organic search</span><b>Useful answers.<br />Lasting demand.</b><small>strategy / content / compounding</small></div>}
+          {study.variant === 'three' && <div class="metric-board"><div><small>BEFORE</small><b>?</b><span>unclear signals</span></div><div class="metric-arrow">→</div><div><small>AFTER</small><b>✓</b><span>shared picture</span></div></div>}
+        </div>
+        <div class="case-meta"><span>{study.client}</span><span>0{index + 1} / 03</span></div>
+        <h3>{study.title}</h3>
+        <p>{study.summary}</p>
+        <div class="result-row"><strong>{study.metric}</strong><span>{study.result}</span><a href="#contact" aria-label={`Ask about case study ${index + 1}`}>↗</a></div>
+      </article>
+    ))}
+  </div>
+</section>

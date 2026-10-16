@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<BaseLayout>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <section class="proof-strip">
+      <div class="wrap proof-inner"><span class="proof-label">THE WORK SHOULD<br />MOVE THE BUSINESS.</span><p>Clear thinking. Thoughtful execution. Results you can actually explain.</p><span class="proof-mark">✳</span></div>
+    </section>
+    <CaseStudies />
+    <Services />
+    <About />
+    <Contact />
+  </main>
+  <SiteFooter />
+</BaseLayout>
